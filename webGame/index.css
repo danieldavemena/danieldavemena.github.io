@@ -1,0 +1,423 @@
+:root {
+  --text-1: #ffffff;
+  --box-shadow: #00000062;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-image: url("assets/galaxy-stars.gif");
+  background-size: cover;
+  background-repeat: no-repeatcd;
+}
+
+* {
+  font-family: "Silkscreen", sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+.startGame {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login {
+  padding: 10pt 30pt;
+  font-size: 26pt;
+  font-weight: bold;
+  width: 150%;
+  border: 5px solid white;
+  color: var(--text-1);
+  background: rgb(53, 129, 53);
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+}
+
+.startButton {
+  padding: 10pt 30pt;
+  font-size: 18pt;
+  font-weight: bold;
+  border: 5px solid white;
+  color: var(--text-1);
+  background: #304c40;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+}
+
+.signup {
+  padding: 10pt 30pt;
+  font-size: 18pt;
+  font-weight: bold;
+  border: 5px solid white;
+  color: var(--text-1);
+  background: #304c40;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+}
+
+.login:hover,
+.startButton:hover,
+.signup:hover,
+.logout:hover {
+  transform: translateY(-5px);
+  transition: 100ms ease-in-out;
+  box-shadow: 0 5px 5px var(--box-shadow);
+}
+
+.roomCanvas {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.canvas {
+  height: 144px;
+  width: 256px;
+  background-image: url(./assets/webappBackground.png);
+  image-rendering: pixelated;
+  scale: 3;
+}
+
+.tv {
+  margin-left: 0px;
+  margin-top: 85px;
+  cursor: pointer;
+}
+
+.couch {
+  margin-left: 0;
+  margin-top: 123px;
+}
+
+.pcLeftOne {
+  margin-left: 63px;
+  margin-top: -15px;
+}
+
+.pcLeftTwo {
+  margin-left: 63px;
+  margin-top: 17px;
+}
+
+.pcRightOne {
+  margin-left: 0;
+  margin-top: -15px;
+}
+
+.pcRightTwo {
+  margin-left: 0;
+  margin-top: 17px;
+}
+
+.seatLeftOne {
+  margin-left: 19px;
+  margin-top: -6px;
+  z-index: -100 !important;
+}
+
+.seatLeftTwo {
+  margin-left: 19px;
+  margin-top: 26px;
+  z-index: -100 !important;
+}
+
+.seatRightOne {
+  margin-left: 47px;
+  margin-top: -6px;
+  z-index: -100 !important;
+}
+
+.seatRightTwo {
+  margin-left: 47px;
+  margin-top: 26px;
+  z-index: -100 !important;
+}
+
+.speaker {
+  margin-left: 111px;
+  margin-top: 53px;
+  cursor: pointer;
+}
+
+.settings {
+  margin-left: 160px;
+  margin-top: -16px;
+  cursor: pointer;
+}
+
+.shipControl {
+  margin-left: 95px;
+  margin-top: -6px;
+  cursor: pointer;
+}
+
+.tvPopup {
+  padding: 30px;
+  width: 740px;
+  height: 540px;
+  background: #37946e;
+  position: absolute;
+  border: 5px solid white;
+  color: white;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  z-index: 1005;
+}
+
+.signupPopup,
+.loginPopup {
+  padding: 80px 30px 0 30px;
+  width: 400px;
+  height: 300px;
+  color: white;
+  background: rgba(0, 0, 0, 0.795);
+  border: 5px solid white;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  z-index: 1005;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.items {
+  position: absolute;
+  z-index: 1000;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.square {
+  background-image: url("./image.png ");
+  background-size: cover;
+  height: 16px;
+  width: 16px;
+  transition: 100ms ease-in-out;
+}
+
+.nameTag {
+  font-size: 5px;
+  position: fixed;
+  transform: translateY(-12px);
+  text-align: center;
+  background: green;
+  padding: 1px;
+  color: white;
+  z-index: 2000;
+}
+
+.popupGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  background: red;
+  margin-right: 0;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.signupForm,
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signupForm .formGroup input,
+.loginForm .formGroup input {
+  border: 2px solid red;
+}
+
+.formGroup input {
+  width: 100%;
+  outline: none;
+}
+
+.signupForm input[type="submit"],
+.loginForm input[type="submit"] {
+  background: green;
+}
+
+.logout {
+  position: fixed;
+  background: red;
+  right: 10px;
+  font-size: 14pt;
+  top: 10px;
+  color: white;
+  border: 2px solid white;
+  transition: 100ms ease-in-out;
+}
+
+button {
+  cursor: pointer;
+}
+
+.chatSection {
+  position: fixed;
+  top: 0;
+  left: -500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 500px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.664);
+  z-index: 200;
+  transition: 150ms ease-in-out;
+  scrollbar-width: thin;
+  scrollbar-color: white rgba(0, 0, 0, 0);
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  min-height: calc(100% - 70px);
+  flex: 1;
+  margin: 10px 10px 60px 10px;
+}
+
+.chatBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 500px;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(94, 93, 93);
+  height: 50px;
+}
+
+.chatInput {
+  width: 60%;
+  background: rgba(255, 255, 255, 0.479);
+  border: 2px solid rgb(221, 221, 221);
+  outline: none;
+}
+
+.chatSubmit {
+  display: block;
+  width: 20%;
+}
+
+.chatLogo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  image-rendering: pixelated;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  background: rgb(53, 129, 53);
+}
+
+.uiElement {
+  cursor: pointer;
+}
+
+.chatChat {
+  font-size: 9pt;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 45%;
+}
+
+.message {
+  width: 100%;
+  word-wrap: break-word;
+  padding: 10px;
+  background-image: url();
+  border: 2px solid white;
+}
+
+.from {
+  word-wrap: break-word;
+  font-size: 7pt;
+  opacity: 0.5;
+}
+
+.right {
+  text-align: right;
+  margin-right: 40px;
+  margin-left: auto;
+}
+
+.left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.responseGroup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  gap: 50px;
+}
+
+.movieInfo {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.responseError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

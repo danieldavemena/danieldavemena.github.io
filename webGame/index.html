@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="signupPopup hide">
+      <div class="popupGroup">
+        <div class="close">x</div>
+        <h2>Create an Account</h2>
+        <form class="signupForm" action="">
+          <div class="formGroup">
+            <label for="username">Username:</label>
+            <input class="signupUsername" type="text" name="username" />
+          </div>
+          <div class="formGroup">
+            <label for="email">Email:</label>
+            <input class="signupEmail" type="email" name="email" />
+          </div>
+          <div class="formGroup">
+            <label for="password">Password:</label>
+            <input class="signupPassword" type="password" name="password" />
+          </div>
+          <input
+            class="signupSubmit"
+            type="submit"
+            value="Sign Up"
+            disabled="true"
+          />
+        </form>
+      </div>
+    </div>
+
+    <div class="loginPopup hide">
+      <div class="popupGroup">
+        <div class="close">x</div>
+        <h2>Login your Account</h2>
+        <form class="loginForm" action="">
+          <div class="formGroup">
+            <label for="email">Email:</label>
+            <input type="email" name="email" />
+          </div>
+          <div class="formGroup">
+            <label for="password">Password:</label>
+            <input type="password" name="password" />
+          </div>
+          <input type="submit" value="Log In" />
+        </form>
+      </div>
+    </div>
+
+    <div class="startGame">
+      <div class="buttonGroup">
+        <button class="login">Start Meeting</button>
+        <button class="startButton">Start Anonymously</button>
+        <button class="signup">Sign Up</button>
+      </div>
+    </div>
+
+    <div class="tvPopup hide">
+      <div class="popupGroup">
+        <div class="close">x</div>
+        <form class="movieForm" action="">
+          <div class="formGroup">
+            <label for="searchMovie">Search Movie</label>
+            <input type="text" name="searchMovie" autocomplete="off" />
+            <input type="submit" class="submitMovie" value="Search" />
+          </div>
+        </form>
+        <div class="responseGroup">
+          <img src="" alt="" class="movieResponse" />
+          <div class="movieInfo"></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="logout hide">Log Out</button>
+
+    <div class="chatLogo hide uiElement">
+      <img height="30px" width="30px" src="./assets/chat.png" alt="" />
+    </div>
+    <div class="chatSection hide">
+      <div class="chatContainer"></div>
+      <form action="post" class="chatBar">
+        <input
+          class="chatInput"
+          type="text"
+          name="chatInput"
+          id=""
+          autocomplete="off"
+        />
+        <input class="chatSubmit" type="submit" value="SEND" />
+      </form>
+    </div>
+
+    <div class="roomCanvas hide">
+      <div class="canvas">
+        <div class="tv items">
+          <img src="./assets/TV.png" alt="" class="tvItem" />
+        </div>
+        <div class="couch items">
+          <img src="./assets/couch.png" alt="" class="tvItem" />
+        </div>
+        <div class="pcLeftOne items">
+          <img src="./assets/pcFacingLeft.png" alt="" class="tvItem" />
+        </div>
+        <div class="pcLeftTwo items">
+          <img src="./assets/pcFacingLeft.png" alt="" class="tvItem" />
+        </div>
+        <div class="pcRightOne items">
+          <img src="./assets/pcFacingRight.png" alt="" class="tvItem" />
+        </div>
+        <div class="pcRightTwo items">
+          <img src="./assets/pcFacingRight.png" alt="" class="tvItem" />
+        </div>
+        <div class="seatLeftOne items">
+          <img src="./assets/seatFacingLeft.png" alt="" class="tvItem" />
+        </div>
+        <div class="seatLeftTwo items">
+          <img src="./assets/seatFacingLeft.png" alt="" class="tvItem" />
+        </div>
+        <div class="seatRightOne items">
+          <img src="./assets/seatFacingRight.png" alt="" class="tvItem" />
+        </div>
+        <div class="seatRightTwo items">
+          <img src="./assets/seatFacingRight.png" alt="" class="tvItem" />
+        </div>
+        <div class="speaker items">
+          <div class="speakerPopup hide"></div>
+          <img src="./assets/tentacleSpeaker.gif" alt="" class="speakerItem" />
+        </div>
+        <div class="settings items">
+          <div class="settingsPopup hide"></div>
+          <img src="./assets/settingMachine.gif" alt="" class="settingsItem" />
+        </div>
+        <div class="shipControl items">
+          <div class="shipControlPopup hide"></div>
+          <img src="./assets/shipControl.gif" alt="" class="shipControlItem" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const startGame = document.querySelector(".startGame");
+  const canvas = document.querySelector(".canvas");
+  const roomCanvas = document.querySelector(".roomCanvas");
+
+  const start = document.querySelector(".startButton");
+
+  document.querySelector(".tvItem").addEventListener("click", () => {
+    document.querySelector(".tvPopup").classList.remove("hide");
+    setTimeout(() => {
+      document.querySelector(".tvPopup").style.top = "50%";
+    }, 200);
+    window.popUp = true;
+  });
+
+  document.querySelector(".signup").addEventListener("click", () => {
+    document.querySelector(".signupPopup").classList.remove("hide");
+    setTimeout(() => {
+      document.querySelector(".signupPopup").style.top = "50%";
+    }, 200);
+    window.popUp = true;
+  });
+
+  document.querySelector(".login").addEventListener("click", () => {
+    document.querySelector(".loginPopup").classList.remove("hide");
+    setTimeout(() => {
+      document.querySelector(".loginPopup").style.top = "50%";
+    }, 200);
+    window.popUp = true;
+  });
+
+  document.querySelector(".chatLogo").addEventListener("click", () => {
+    document.querySelector(".chatSection").style.left = 0;
+    window.popUp = true;
+  });
+</script>
+<script type="module" src="./index.js"></script>
+<script src="apis.js"></script>
